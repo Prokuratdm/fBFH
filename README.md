@@ -1,17 +1,30 @@
-# fbfh
+# fBFH — Frontend for bFH
 
-front for bfh
+Фронтенд на Flutter для системы управления спортивными клубами, тренировками, детьми и нормативами.
 
-## Getting Started
+## Быстрый старт (Web)
 
-This project is a starting point for a Flutter application.
+```bash
+# Установка зависимостей
+flutter pub get
 
-A few resources to get you started if this is your first Flutter project:
+# Запуск веб-версии (на localhost:8080 бэкенд)
+flutter run -d chrome
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Стек
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter** 3.x (Dart)
+- **HTTP**: `package:http`
+- **Локализация**: `flutter_localizations` (русский по умолчанию)
+- **Аутентификация**: JWT, хранится в куках браузера
+
+## Платформы
+
+- Web (основная)
+- iOS
+- Android
+
+## Бэкенд
+
+REST API на `http://localhost:8080/api/v1`. Требует запущенный бэкенд-сервер.

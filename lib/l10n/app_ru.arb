@@ -1,0 +1,35 @@
+{
+  "@@locale": "ru",
+  "appTitle": "fBFH",
+  "loginTitle": "Вход в систему",
+  "usernameLabel": "Логин",
+  "passwordLabel": "Пароль",
+  "loginButton": "Войти",
+  "loginError": "Ошибка входа",
+  "loginNetworkError": "Сетевая ошибка. Проверьте подключение.",
+  "welcome": "Привет, {username}!",
+  "@welcome": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "logoutButton": "Выйти",
+  "menuDashboard": "Дашборд",
+  "menuClubs": "Клубы",
+  "menuMyClub": "Мой клуб",
+  "menuUsers": "Пользователи",
+  "menuTeams": "Команды",
+  "menuMyTeams": "Мои команды",
+  "menuChildren": "Дети",
+  "menuTrainings": "Тренировки",
+  "menuLocations": "Локации",
+  "menuInventory": "Инвентарь",
+  "menuExercises": "Упражнения",
+  "menuStandards": "Нормативы",
+  "menuTemplates": "Шаблоны тренировок",
+  "menuPrograms": "Программы",
+  "inDevelopment": "В разработке",
+  "fieldRequired": "Обязательное поле"
+}

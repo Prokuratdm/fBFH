@@ -1,0 +1,35 @@
+{
+  "@@locale": "en",
+  "appTitle": "fBFH",
+  "loginTitle": "Sign In",
+  "usernameLabel": "Username",
+  "passwordLabel": "Password",
+  "loginButton": "Sign In",
+  "loginError": "Login Error",
+  "loginNetworkError": "Network error. Check your connection.",
+  "welcome": "Hello, {username}!",
+  "@welcome": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "logoutButton": "Sign Out",
+  "menuDashboard": "Dashboard",
+  "menuClubs": "Clubs",
+  "menuMyClub": "My Club",
+  "menuUsers": "Users",
+  "menuTeams": "Teams",
+  "menuMyTeams": "My Teams",
+  "menuChildren": "Children",
+  "menuTrainings": "Trainings",
+  "menuLocations": "Locations",
+  "menuInventory": "Inventory",
+  "menuExercises": "Exercises",
+  "menuStandards": "Standards",
+  "menuTemplates": "Template Trainings",
+  "menuPrograms": "Programs",
+  "inDevelopment": "In Development",
+  "fieldRequired": "Required field"
+}
