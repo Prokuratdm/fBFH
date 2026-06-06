@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fbfh/l10n/app_localizations.dart';
 import 'package:fbfh/pages/login_page.dart';
 import 'package:fbfh/pages/home_page.dart';
-import 'package:fbfh/models/login_response.dart';
+import 'package:fbfh/models/user_info.dart';
 
 /// Обёртка MaterialApp с локализацией для тестирования страниц.
 Widget wrapWithMaterial(Widget child) {
@@ -44,22 +44,25 @@ void main() {
   });
 
   group('HomePage', () {
-    final testUser = LoginResponse(
-      token: 'test-token',
-      userId: 'test-uuid',
+    final testUser = UserInfo(
+      id: 'test-uuid',
       username: 'admin',
+      email: 'admin@test.by',
+      enabled: true,
       roles: ['ROLE_COACH'],
+      lastSeenAt: '2026-06-06T16:23:27.881291',
+      createdAt: '2026-06-02T16:03:12.889525',
     );
 
     testWidgets('отображает приветствие и меню для COACH', (tester) async {
       await tester.pumpWidget(wrapWithMaterial(HomePage(user: testUser)));
       await tester.pumpAndSettle();
 
-      // Приветствие в AppBar (1) + в центре экрана (1) = 2
       expect(find.text('Привет, admin!'), findsNWidgets(2));
       expect(find.text('Мои команды'), findsOneWidget);
       expect(find.text('Дети'), findsOneWidget);
       expect(find.byType(NavigationRail), findsOneWidget);
+      expect(find.byIcon(Icons.chevron_left), findsOneWidget);
       expect(find.text('Выйти'), findsOneWidget);
     });
   });

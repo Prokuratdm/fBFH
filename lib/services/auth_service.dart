@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 import '../core/config/app_config.dart';
 import '../models/login_response.dart';
+import '../models/user_info.dart';
 import 'cookie_storage.dart';
 
 /// Сервис аутентификации.
@@ -11,8 +12,6 @@ import 'cookie_storage.dart';
 /// Выполняет логин через POST /api/v1/auth/login,
 /// сохраняет токен/username/roles в [CookieStorage].
 class AuthService {
-  // URL берётся из AppConfig (String.fromEnvironment с дефолтом).
-
   static const String tokenKey = 'token';
   static const String usernameKey = 'username';
   static const String rolesKey = 'roles';
@@ -51,6 +50,42 @@ class AuthService {
         message = body['message'] ?? 'Неверный логин или пароль';
       } catch (_) {
         message = 'Ошибка сервера (${response.statusCode})';
+      }
+      throw AuthException(message);
+    }
+  }
+
+  /// Проверяет токен через GET /api/v1/auth/me.
+  ///
+  /// Возвращает [UserInfo] если токен валиден.
+  /// Если 403 или другая ошибка — выбрасывает [AuthException] и чистит куки.
+  Future<UserInfo> me() async {
+    final token = getToken();
+    if (token == null || token.isEmpty) {
+      throw AuthException('Токен отсутствует');
+    }
+
+    final uri = Uri.parse('${AppConfig.baseUrl}${AppConfig.mePath}');
+    final response = await http.get(
+      uri,
+      headers: {
+        'Accept': '*/*',
+        'Authorization': 'Bearer $token',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final body = jsonDecode(response.body) as Map<String, dynamic>;
+      return UserInfo.fromJson(body);
+    } else {
+      // При любой ошибке (403, 401, сетевая) — токен невалиден, чистим
+      logout();
+      String message;
+      try {
+        final body = jsonDecode(response.body);
+        message = body['detail'] ?? body['message'] ?? 'Токен невалиден';
+      } catch (_) {
+        message = 'Ошибка проверки токена (${response.statusCode})';
       }
       throw AuthException(message);
     }

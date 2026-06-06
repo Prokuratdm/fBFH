@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../l10n/app_localizations.dart';
 import '../services/auth_service.dart';
@@ -41,17 +42,26 @@ class _LoginPageState extends State<LoginPage> {
     setState(() => _loading = true);
 
     try {
-      final response = await _authService.login(
+      // Логин — получаем токен
+      await _authService.login(
         _usernameController.text.trim(),
         _passwordController.text,
       );
 
       if (!mounted) return;
 
+      // Получаем актуальную информацию пользователя через /me
+      final userInfo = await _authService.me();
+
+      if (!mounted) return;
+
+      // Триггерим нативный браузерный Password Manager
+      TextInput.finishAutofillContext();
+
       Navigator.pushReplacementNamed(
         context,
         '/home',
-        arguments: response,
+        arguments: userInfo, // UserInfo (не LoginResponse)
       );
     } on AuthException catch (e) {
       _showError(e.message);
@@ -85,53 +95,58 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(32),
               child: Form(
                 key: _formKey,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      l10n.loginTitle,
-                      style: Theme.of(context).textTheme.headlineMedium,
-                    ),
-                    const SizedBox(height: 24),
-                    TextFormField(
-                      controller: _usernameController,
-                      decoration: InputDecoration(
-                        labelText: l10n.usernameLabel,
-                        border: const OutlineInputBorder(),
+                child: AutofillGroup(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        l10n.loginTitle,
+                        style: Theme.of(context).textTheme.headlineMedium,
                       ),
-                      textInputAction: TextInputAction.next,
-                      validator: (v) =>
-                          (v == null || v.trim().isEmpty) ? l10n.fieldRequired : null,
-                    ),
-                    const SizedBox(height: 16),
-                    TextFormField(
-                      controller: _passwordController,
-                      decoration: InputDecoration(
-                        labelText: l10n.passwordLabel,
-                        border: const OutlineInputBorder(),
+                      const SizedBox(height: 24),
+                      TextFormField(
+                        controller: _usernameController,
+                        decoration: InputDecoration(
+                          labelText: l10n.usernameLabel,
+                          border: const OutlineInputBorder(),
+                        ),
+                        autofillHints: const [AutofillHints.username],
+                        textInputAction: TextInputAction.next,
+                        validator: (v) =>
+                            (v == null || v.trim().isEmpty) ? l10n.fieldRequired : null,
                       ),
-                      obscureText: true,
-                      textInputAction: TextInputAction.done,
-                      onFieldSubmitted: (_) => _submit(),
-                      validator: (v) =>
-                          (v == null || v.isEmpty) ? l10n.fieldRequired : null,
-                    ),
-                    const SizedBox(height: 24),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 48,
-                      child: ElevatedButton(
-                        onPressed: _loading ? null : _submit,
-                        child: _loading
-                            ? const SizedBox(
-                                width: 20,
-                                height: 20,
-                                child: CircularProgressIndicator(strokeWidth: 2),
-                              )
-                            : Text(l10n.loginButton),
+                      const SizedBox(height: 16),
+                      TextFormField(
+                        controller: _passwordController,
+                        decoration: InputDecoration(
+                          labelText: l10n.passwordLabel,
+                          border: const OutlineInputBorder(),
+                        ),
+                        autofillHints: const [AutofillHints.password],
+                        obscureText: true,
+                        keyboardType: TextInputType.visiblePassword,
+                        textInputAction: TextInputAction.done,
+                        onFieldSubmitted: (_) => _submit(),
+                        validator: (v) =>
+                            (v == null || v.isEmpty) ? l10n.fieldRequired : null,
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 24),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 48,
+                        child: ElevatedButton(
+                          onPressed: _loading ? null : _submit,
+                          child: _loading
+                              ? const SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                )
+                              : Text(l10n.loginButton),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

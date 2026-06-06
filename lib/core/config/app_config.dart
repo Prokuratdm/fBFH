@@ -15,4 +15,7 @@ class AppConfig {
 
   /// Путь для логина относительно [baseUrl].
   static const String loginPath = '/api/v1/auth/login';
+
+  /// Путь для проверки токена и получения информации о пользователе.
+  static const String mePath = '/api/v1/auth/me';
 }
