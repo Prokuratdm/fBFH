@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
 import '../l10n/menu_items.dart';
 import '../models/user_info.dart';
-import '../services/auth_service.dart';
 import '../services/auth_service_config.dart';
+import 'clubs_page.dart';
 
-/// Домашний экран после входа с раскладывающимся боковым меню.
+/// Главный экран с боковым меню, всегда видимым.
 class HomePage extends StatefulWidget {
   final UserInfo user;
 
@@ -19,6 +19,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _authService = authService;
   bool _expanded = true;
+  int _selectedIndex = 0;
+  final _clubsKey = GlobalKey<ClubsPageState>();
 
   void _logout() {
     _authService.logout();
@@ -54,12 +56,12 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Row(
           children: [
-            // Боковое меню с анимацией ширины
+            // Боковое меню
             AnimatedContainer(
               duration: const Duration(milliseconds: 200),
               width: _expanded ? 200 : 72,
               child: NavigationRail(
-                selectedIndex: null,
+                selectedIndex: _selectedIndex,
                 labelType: _expanded
                     ? NavigationRailLabelType.all
                     : NavigationRailLabelType.none,
@@ -80,45 +82,55 @@ class _HomePageState extends State<HomePage> {
                     )
                     .toList(),
                 onDestinationSelected: (index) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                          '${menuItems[index].label}: ${l10n.inDevelopment}'),
-                    ),
-                  );
+                  setState(() => _selectedIndex = index);
+                  // Обновляем список клубов при переходе на вкладку
+                  _clubsKey.currentState?.refresh();
                 },
               ),
             ),
             const VerticalDivider(width: 1),
-            // Основная область
+            // Контентная область
             Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.check_circle_outline,
-                      size: 64,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      l10n.welcome(widget.user.username),
-                      style: Theme.of(context).textTheme.headlineMedium,
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      widget.user.roles.join(', '),
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: Theme.of(context).colorScheme.secondary,
-                          ),
-                    ),
-                  ],
-                ),
+              child: IndexedStack(
+                index: _selectedIndex,
+                children: menuItems.map((item) {
+                  if (item.label == l10n.menuClubs ||
+                      item.label == l10n.menuMyClub) {
+                    return ClubsPage(key: _clubsKey);
+                  }
+                  return _buildPlaceholder(item.label, l10n);
+                }).toList(),
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildPlaceholder(String label, AppLocalizations l10n) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.check_circle_outline,
+            size: 64,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+          const SizedBox(height: 16),
+          Text(
+            l10n.welcome(widget.user.username),
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            '$label — ${l10n.inDevelopment}',
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+          ),
+        ],
       ),
     );
   }

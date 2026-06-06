@@ -84,4 +84,48 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fieldRequired => 'Required field';
+
+  @override
+  String get clubsTitle => 'Clubs';
+
+  @override
+  String get clubsCreateButton => 'Create New Club';
+
+  @override
+  String get clubNameLabel => 'Name';
+
+  @override
+  String get clubAddressLabel => 'Address';
+
+  @override
+  String get clubDescriptionLabel => 'Description';
+
+  @override
+  String get clubLogoLabel => 'Logo';
+
+  @override
+  String get clubCreateDialogTitle => 'New Club';
+
+  @override
+  String get clubLogoErrorSize => 'Logo file must not exceed 200 KB';
+
+  @override
+  String get clubLogoErrorDimensions =>
+      'Logo must be no larger than 200×200 pixels';
+
+  @override
+  String get clubLogoSelectFile => 'Select File';
+
+  @override
+  String get clubCreate => 'Create';
+
+  @override
+  String get clubNoLogo => 'No logo';
+
+  @override
+  String get clubRetry => 'Retry';
+
+  @override
+  String get clubLogoUploadError =>
+      'Logo upload failed. You can add it when editing the club.';
 }

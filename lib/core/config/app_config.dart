@@ -18,4 +18,10 @@ class AppConfig {
 
   /// Путь для проверки токена и получения информации о пользователе.
   static const String mePath = '/api/v1/auth/me';
+
+  /// Путь для работы с клубами.
+  static const String clubsPath = '/api/v1/clubs';
+
+  /// Путь для логотипа клуба.
+  static String clubLogoPath(String id) => '/api/v1/clubs/$id/logo';
 }

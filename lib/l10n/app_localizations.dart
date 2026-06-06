@@ -247,6 +247,90 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Обязательное поле'**
   String get fieldRequired;
+
+  /// No description provided for @clubsTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Клубы'**
+  String get clubsTitle;
+
+  /// No description provided for @clubsCreateButton.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать новый клуб'**
+  String get clubsCreateButton;
+
+  /// No description provided for @clubNameLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Название'**
+  String get clubNameLabel;
+
+  /// No description provided for @clubAddressLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Адрес'**
+  String get clubAddressLabel;
+
+  /// No description provided for @clubDescriptionLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Описание'**
+  String get clubDescriptionLabel;
+
+  /// No description provided for @clubLogoLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Логотип'**
+  String get clubLogoLabel;
+
+  /// No description provided for @clubCreateDialogTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Новый клуб'**
+  String get clubCreateDialogTitle;
+
+  /// No description provided for @clubLogoErrorSize.
+  ///
+  /// In ru, this message translates to:
+  /// **'Файл логотипа не должен превышать 200 КБ'**
+  String get clubLogoErrorSize;
+
+  /// No description provided for @clubLogoErrorDimensions.
+  ///
+  /// In ru, this message translates to:
+  /// **'Логотип должен быть не больше 200×200 пикселей'**
+  String get clubLogoErrorDimensions;
+
+  /// No description provided for @clubLogoSelectFile.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выбрать файл'**
+  String get clubLogoSelectFile;
+
+  /// No description provided for @clubCreate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать'**
+  String get clubCreate;
+
+  /// No description provided for @clubNoLogo.
+  ///
+  /// In ru, this message translates to:
+  /// **'Без лого'**
+  String get clubNoLogo;
+
+  /// No description provided for @clubRetry.
+  ///
+  /// In ru, this message translates to:
+  /// **'Повторить'**
+  String get clubRetry;
+
+  /// No description provided for @clubLogoUploadError.
+  ///
+  /// In ru, this message translates to:
+  /// **'Логотип не загружен. Добавьте его при редактировании клуба.'**
+  String get clubLogoUploadError;
 }
 
 class _AppLocalizationsDelegate

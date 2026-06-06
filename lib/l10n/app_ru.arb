@@ -31,5 +31,19 @@
   "menuTemplates": "Шаблоны тренировок",
   "menuPrograms": "Программы",
   "inDevelopment": "В разработке",
-  "fieldRequired": "Обязательное поле"
+  "fieldRequired": "Обязательное поле",
+  "clubsTitle": "Клубы",
+  "clubsCreateButton": "Создать новый клуб",
+  "clubNameLabel": "Название",
+  "clubAddressLabel": "Адрес",
+  "clubDescriptionLabel": "Описание",
+  "clubLogoLabel": "Логотип",
+  "clubCreateDialogTitle": "Новый клуб",
+  "clubLogoErrorSize": "Файл логотипа не должен превышать 200 КБ",
+  "clubLogoErrorDimensions": "Логотип должен быть не больше 200×200 пикселей",
+  "clubLogoSelectFile": "Выбрать файл",
+  "clubCreate": "Создать",
+  "clubNoLogo": "Без лого",
+  "clubRetry": "Повторить",
+  "clubLogoUploadError": "Логотип не загружен. Добавьте его при редактировании клуба."
 }

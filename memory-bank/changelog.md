@@ -24,6 +24,16 @@
 - Бесконечный спиннер при нажатии «назад» на HomePage: добавлен `PopScope` с `canPop: false` и logout
 - Ошибки `dartDevEmbedder` при F5: добавлен `usePathUrlStrategy()` для path-навигации
 
+### Added
+- Страница клубов (ClubsPage) с созданием, списком и пагинацией
+- ClubService: createClub, uploadLogo (с проверкой ≤200KB/≤200×200px), getClubs (пагинация)
+- Модель ClubResponse (fromJson/toJson)
+- Модель PageResponse<T> (дженерик-обёртка для Spring Page)
+- i18n-строки для клубов (RU + EN)
+- Маршрут /clubs в main.dart
+- Зависимости: file_picker, image
+- 10 новых тестов (ClubResponse, PageResponse, ClubService)
+
 ### Removed
 - Три файла password_manager (password_manager.dart, password_manager_web.dart, password_manager_stub.dart)
 - Скрытая HTML-форма из web/index.html

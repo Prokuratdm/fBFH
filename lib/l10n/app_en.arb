@@ -31,5 +31,19 @@
   "menuTemplates": "Template Trainings",
   "menuPrograms": "Programs",
   "inDevelopment": "In Development",
-  "fieldRequired": "Required field"
+  "fieldRequired": "Required field",
+  "clubsTitle": "Clubs",
+  "clubsCreateButton": "Create New Club",
+  "clubNameLabel": "Name",
+  "clubAddressLabel": "Address",
+  "clubDescriptionLabel": "Description",
+  "clubLogoLabel": "Logo",
+  "clubCreateDialogTitle": "New Club",
+  "clubLogoErrorSize": "Logo file must not exceed 200 KB",
+  "clubLogoErrorDimensions": "Logo must be no larger than 200×200 pixels",
+  "clubLogoSelectFile": "Select File",
+  "clubCreate": "Create",
+  "clubNoLogo": "No logo",
+  "clubRetry": "Retry",
+  "clubLogoUploadError": "Logo upload failed. You can add it when editing the club."
 }

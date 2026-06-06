@@ -130,4 +130,33 @@ class StubLocalizations implements AppLocalizations {
   String get inDevelopment => 'В разработке';
   @override
   String get fieldRequired => 'Обязательное поле';
+
+  @override
+  String get clubsTitle => 'Клубы';
+  @override
+  String get clubsCreateButton => 'clubsCreateButton';
+  @override
+  String get clubNameLabel => 'clubNameLabel';
+  @override
+  String get clubAddressLabel => 'clubAddressLabel';
+  @override
+  String get clubDescriptionLabel => 'clubDescriptionLabel';
+  @override
+  String get clubLogoLabel => 'clubLogoLabel';
+  @override
+  String get clubCreateDialogTitle => 'clubCreateDialogTitle';
+  @override
+  String get clubLogoErrorSize => 'clubLogoErrorSize';
+  @override
+  String get clubLogoErrorDimensions => 'clubLogoErrorDimensions';
+  @override
+  String get clubLogoSelectFile => 'clubLogoSelectFile';
+  @override
+  String get clubCreate => 'clubCreate';
+  @override
+  String get clubNoLogo => 'clubNoLogo';
+  @override
+  String get clubRetry => 'clubRetry';
+  @override
+  String get clubLogoUploadError => 'clubLogoUploadError';
 }

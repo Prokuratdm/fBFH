@@ -84,4 +84,48 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get fieldRequired => 'Обязательное поле';
+
+  @override
+  String get clubsTitle => 'Клубы';
+
+  @override
+  String get clubsCreateButton => 'Создать новый клуб';
+
+  @override
+  String get clubNameLabel => 'Название';
+
+  @override
+  String get clubAddressLabel => 'Адрес';
+
+  @override
+  String get clubDescriptionLabel => 'Описание';
+
+  @override
+  String get clubLogoLabel => 'Логотип';
+
+  @override
+  String get clubCreateDialogTitle => 'Новый клуб';
+
+  @override
+  String get clubLogoErrorSize => 'Файл логотипа не должен превышать 200 КБ';
+
+  @override
+  String get clubLogoErrorDimensions =>
+      'Логотип должен быть не больше 200×200 пикселей';
+
+  @override
+  String get clubLogoSelectFile => 'Выбрать файл';
+
+  @override
+  String get clubCreate => 'Создать';
+
+  @override
+  String get clubNoLogo => 'Без лого';
+
+  @override
+  String get clubRetry => 'Повторить';
+
+  @override
+  String get clubLogoUploadError =>
+      'Логотип не загружен. Добавьте его при редактировании клуба.';
 }
