@@ -159,4 +159,89 @@ class StubLocalizations implements AppLocalizations {
   String get clubRetry => 'clubRetry';
   @override
   String get clubLogoUploadError => 'clubLogoUploadError';
+
+  @override
+  String get usersTitle => 'usersTitle';
+  @override
+  String get usersCreateButton => 'usersCreateButton';
+  @override
+  String get userCreated => 'userCreated';
+  @override
+  String get userDetailTitle => 'userDetailTitle';
+  @override
+  String get userUsernameLabel => 'userUsernameLabel';
+  @override
+  String get userPasswordLabel => 'userPasswordLabel';
+  @override
+  String get userEmailLabel => 'userEmailLabel';
+  @override
+  String get userRolesLabel => 'userRolesLabel';
+  @override
+  String get userClubLabel => 'userClubLabel';
+  @override
+  String get userChangePassword => 'userChangePassword';
+  @override
+  String get newPasswordLabel => 'newPasswordLabel';
+  @override
+  String get passwordChanged => 'passwordChanged';
+  @override
+  String get roleAdmin => 'roleAdmin';
+  @override
+  String get roleMethodist => 'roleMethodist';
+  @override
+  String get roleCoach => 'roleCoach';
+  @override
+  String get roleMainCoach => 'roleMainCoach';
+  @override
+  String get roleClub => 'roleClub';
+  @override
+  String get roleClubMethodist => 'roleClubMethodist';
+  @override
+  String get filterRole => 'filterRole';
+  @override
+  String get filterClub => 'filterClub';
+  @override
+  String get filterUsername => 'filterUsername';
+  @override
+  String get allRoles => 'allRoles';
+  @override
+  String get allClubs => 'allClubs';
+  @override
+  String get noClub => 'noClub';
+
+  @override
+  String get locationsTitle => 'Локации';
+  @override
+  String get locationsCreateButton => 'locationsCreateButton';
+  @override
+  String get locationNameLabel => 'locationNameLabel';
+  @override
+  String get locationCreateDialogTitle => 'locationCreateDialogTitle';
+  @override
+  String get locationCreate => 'locationCreate';
+  @override
+  String get locationCreated => 'locationCreated';
+  @override
+  String get locationsEmpty => 'locationsEmpty';
+  @override
+  String get locationsNoClub => 'locationsNoClub';
+
+  @override
+  String get inventoryTitle => 'Инвентарь';
+  @override
+  String get inventoryCreateButton => 'inventoryCreateButton';
+  @override
+  String get inventoryNameLabel => 'inventoryNameLabel';
+  @override
+  String get inventoryClubLabel => 'inventoryClubLabel';
+  @override
+  String get inventoryCreateDialogTitle => 'inventoryCreateDialogTitle';
+  @override
+  String get inventoryCreate => 'inventoryCreate';
+  @override
+  String get inventoryCreated => 'inventoryCreated';
+  @override
+  String get inventoryEmpty => 'inventoryEmpty';
+  @override
+  String get inventoryNoClub => 'inventoryNoClub';
 }

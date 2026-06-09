@@ -128,4 +128,128 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get clubLogoUploadError =>
       'Logo upload failed. You can add it when editing the club.';
+
+  @override
+  String get usersTitle => 'Users';
+
+  @override
+  String get usersCreateButton => 'Create User';
+
+  @override
+  String get userCreated => 'User created';
+
+  @override
+  String get userDetailTitle => 'User Details';
+
+  @override
+  String get userUsernameLabel => 'Username';
+
+  @override
+  String get userPasswordLabel => 'Password';
+
+  @override
+  String get userEmailLabel => 'Email';
+
+  @override
+  String get userRolesLabel => 'Roles';
+
+  @override
+  String get userClubLabel => 'Club';
+
+  @override
+  String get userChangePassword => 'Change Password';
+
+  @override
+  String get newPasswordLabel => 'New Password';
+
+  @override
+  String get passwordChanged => 'Password changed';
+
+  @override
+  String get roleAdmin => 'Admin';
+
+  @override
+  String get roleMethodist => 'Methodist';
+
+  @override
+  String get roleCoach => 'Coach';
+
+  @override
+  String get roleMainCoach => 'Head Coach';
+
+  @override
+  String get roleClub => 'Club';
+
+  @override
+  String get roleClubMethodist => 'Club Methodist';
+
+  @override
+  String get filterRole => 'Role';
+
+  @override
+  String get filterClub => 'Club';
+
+  @override
+  String get filterUsername => 'Username';
+
+  @override
+  String get allRoles => 'All roles';
+
+  @override
+  String get allClubs => 'All clubs';
+
+  @override
+  String get noClub => 'No club';
+
+  @override
+  String get locationsTitle => 'Locations';
+
+  @override
+  String get locationsCreateButton => 'Create Location';
+
+  @override
+  String get locationNameLabel => 'Name';
+
+  @override
+  String get locationCreateDialogTitle => 'New Location';
+
+  @override
+  String get locationCreate => 'Create';
+
+  @override
+  String get locationCreated => 'Location created';
+
+  @override
+  String get locationsEmpty => 'No locations yet';
+
+  @override
+  String get locationsNoClub =>
+      'User is not assigned to a club. Locations are unavailable.';
+
+  @override
+  String get inventoryTitle => 'Inventory';
+
+  @override
+  String get inventoryCreateButton => 'Create Inventory';
+
+  @override
+  String get inventoryNameLabel => 'Name';
+
+  @override
+  String get inventoryClubLabel => 'Club';
+
+  @override
+  String get inventoryCreateDialogTitle => 'New Inventory';
+
+  @override
+  String get inventoryCreate => 'Create';
+
+  @override
+  String get inventoryCreated => 'Inventory created';
+
+  @override
+  String get inventoryEmpty => 'No inventory yet';
+
+  @override
+  String get inventoryNoClub => 'No clubs available to create inventory.';
 }

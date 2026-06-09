@@ -331,6 +331,252 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Логотип не загружен. Добавьте его при редактировании клуба.'**
   String get clubLogoUploadError;
+
+  /// No description provided for @usersTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пользователи'**
+  String get usersTitle;
+
+  /// No description provided for @usersCreateButton.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать пользователя'**
+  String get usersCreateButton;
+
+  /// No description provided for @userCreated.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пользователь создан'**
+  String get userCreated;
+
+  /// No description provided for @userDetailTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Информация о пользователе'**
+  String get userDetailTitle;
+
+  /// No description provided for @userUsernameLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Логин'**
+  String get userUsernameLabel;
+
+  /// No description provided for @userPasswordLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль'**
+  String get userPasswordLabel;
+
+  /// No description provided for @userEmailLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Email'**
+  String get userEmailLabel;
+
+  /// No description provided for @userRolesLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Роли'**
+  String get userRolesLabel;
+
+  /// No description provided for @userClubLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Клуб'**
+  String get userClubLabel;
+
+  /// No description provided for @userChangePassword.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сменить пароль'**
+  String get userChangePassword;
+
+  /// No description provided for @newPasswordLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Новый пароль'**
+  String get newPasswordLabel;
+
+  /// No description provided for @passwordChanged.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль изменён'**
+  String get passwordChanged;
+
+  /// No description provided for @roleAdmin.
+  ///
+  /// In ru, this message translates to:
+  /// **'Админ'**
+  String get roleAdmin;
+
+  /// No description provided for @roleMethodist.
+  ///
+  /// In ru, this message translates to:
+  /// **'Методист'**
+  String get roleMethodist;
+
+  /// No description provided for @roleCoach.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тренер'**
+  String get roleCoach;
+
+  /// No description provided for @roleMainCoach.
+  ///
+  /// In ru, this message translates to:
+  /// **'Старший тренер'**
+  String get roleMainCoach;
+
+  /// No description provided for @roleClub.
+  ///
+  /// In ru, this message translates to:
+  /// **'Клуб'**
+  String get roleClub;
+
+  /// No description provided for @roleClubMethodist.
+  ///
+  /// In ru, this message translates to:
+  /// **'Методист клуба'**
+  String get roleClubMethodist;
+
+  /// No description provided for @filterRole.
+  ///
+  /// In ru, this message translates to:
+  /// **'Роль'**
+  String get filterRole;
+
+  /// No description provided for @filterClub.
+  ///
+  /// In ru, this message translates to:
+  /// **'Клуб'**
+  String get filterClub;
+
+  /// No description provided for @filterUsername.
+  ///
+  /// In ru, this message translates to:
+  /// **'Логин'**
+  String get filterUsername;
+
+  /// No description provided for @allRoles.
+  ///
+  /// In ru, this message translates to:
+  /// **'Все роли'**
+  String get allRoles;
+
+  /// No description provided for @allClubs.
+  ///
+  /// In ru, this message translates to:
+  /// **'Все клубы'**
+  String get allClubs;
+
+  /// No description provided for @noClub.
+  ///
+  /// In ru, this message translates to:
+  /// **'Без клуба'**
+  String get noClub;
+
+  /// No description provided for @locationsTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Локации'**
+  String get locationsTitle;
+
+  /// No description provided for @locationsCreateButton.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать локацию'**
+  String get locationsCreateButton;
+
+  /// No description provided for @locationNameLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Название'**
+  String get locationNameLabel;
+
+  /// No description provided for @locationCreateDialogTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Новая локация'**
+  String get locationCreateDialogTitle;
+
+  /// No description provided for @locationCreate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать'**
+  String get locationCreate;
+
+  /// No description provided for @locationCreated.
+  ///
+  /// In ru, this message translates to:
+  /// **'Локация создана'**
+  String get locationCreated;
+
+  /// No description provided for @locationsEmpty.
+  ///
+  /// In ru, this message translates to:
+  /// **'Список локаций пуст'**
+  String get locationsEmpty;
+
+  /// No description provided for @locationsNoClub.
+  ///
+  /// In ru, this message translates to:
+  /// **'У пользователя не привязан клуб. Локации недоступны.'**
+  String get locationsNoClub;
+
+  /// No description provided for @inventoryTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Инвентарь'**
+  String get inventoryTitle;
+
+  /// No description provided for @inventoryCreateButton.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать инвентарь'**
+  String get inventoryCreateButton;
+
+  /// No description provided for @inventoryNameLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Название'**
+  String get inventoryNameLabel;
+
+  /// No description provided for @inventoryClubLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Клуб'**
+  String get inventoryClubLabel;
+
+  /// No description provided for @inventoryCreateDialogTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Новый инвентарь'**
+  String get inventoryCreateDialogTitle;
+
+  /// No description provided for @inventoryCreate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать'**
+  String get inventoryCreate;
+
+  /// No description provided for @inventoryCreated.
+  ///
+  /// In ru, this message translates to:
+  /// **'Инвентарь создан'**
+  String get inventoryCreated;
+
+  /// No description provided for @inventoryEmpty.
+  ///
+  /// In ru, this message translates to:
+  /// **'Список инвентаря пуст'**
+  String get inventoryEmpty;
+
+  /// No description provided for @inventoryNoClub.
+  ///
+  /// In ru, this message translates to:
+  /// **'Нет доступных клубов для создания инвентаря.'**
+  String get inventoryNoClub;
 }
 
 class _AppLocalizationsDelegate

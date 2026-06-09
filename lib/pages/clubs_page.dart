@@ -340,6 +340,7 @@ class ClubsPageState extends State<ClubsPage> {
           return _ClubCard(
             club: club,
             logoUrl: _clubService.getLogoUrl(club.id),
+            token: _clubService.token,
           );
         },
       ),
@@ -350,8 +351,13 @@ class ClubsPageState extends State<ClubsPage> {
 class _ClubCard extends StatelessWidget {
   final ClubResponse club;
   final String logoUrl;
+  final String? token;
 
-  const _ClubCard({required this.club, required this.logoUrl});
+  const _ClubCard({
+    required this.club,
+    required this.logoUrl,
+    required this.token,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -366,6 +372,9 @@ class _ClubCard extends StatelessWidget {
                   width: 48,
                   height: 48,
                   fit: BoxFit.cover,
+                  headers: token != null
+                      ? {'Authorization': 'Bearer $token'}
+                      : null,
                   errorBuilder: (_, __, ___) =>
                       const Icon(Icons.business, size: 48),
                 )

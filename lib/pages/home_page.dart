@@ -5,6 +5,9 @@ import '../l10n/menu_items.dart';
 import '../models/user_info.dart';
 import '../services/auth_service_config.dart';
 import 'clubs_page.dart';
+import 'inventory_page.dart';
+import 'locations_page.dart';
+import 'users_page.dart';
 
 /// Главный экран с боковым меню, всегда видимым.
 class HomePage extends StatefulWidget {
@@ -21,6 +24,9 @@ class _HomePageState extends State<HomePage> {
   bool _expanded = true;
   int _selectedIndex = 0;
   final _clubsKey = GlobalKey<ClubsPageState>();
+  final _usersKey = GlobalKey<UsersPageState>();
+  final _locationsKey = GlobalKey<LocationsPageState>();
+  final _inventoryKey = GlobalKey<InventoryPageState>();
 
   void _logout() {
     _authService.logout();
@@ -83,8 +89,10 @@ class _HomePageState extends State<HomePage> {
                     .toList(),
                 onDestinationSelected: (index) {
                   setState(() => _selectedIndex = index);
-                  // Обновляем список клубов при переходе на вкладку
                   _clubsKey.currentState?.refresh();
+                  _usersKey.currentState?.refresh();
+                  _locationsKey.currentState?.refresh();
+                  _inventoryKey.currentState?.refresh();
                 },
               ),
             ),
@@ -97,6 +105,21 @@ class _HomePageState extends State<HomePage> {
                   if (item.label == l10n.menuClubs ||
                       item.label == l10n.menuMyClub) {
                     return ClubsPage(key: _clubsKey);
+                  }
+                  if (item.label == l10n.menuUsers) {
+                    return UsersPage(key: _usersKey);
+                  }
+                  if (item.label == l10n.menuLocations) {
+                    return LocationsPage(
+                      key: _locationsKey,
+                      clubId: widget.user.clubId,
+                    );
+                  }
+                  if (item.label == l10n.menuInventory) {
+                    return InventoryPage(
+                      key: _inventoryKey,
+                      defaultClubId: widget.user.clubId,
+                    );
                   }
                   return _buildPlaceholder(item.label, l10n);
                 }).toList(),

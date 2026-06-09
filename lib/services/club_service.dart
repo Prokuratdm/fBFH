@@ -16,6 +16,9 @@ class ClubService {
 
   String? get _token => _authService.getToken();
 
+  /// Токен для авторизации (используется в Image.network headers).
+  String? get token => _authService.getToken();
+
   Map<String, String> get _headers => {
         'Accept': '*/*',
         if (_token != null) 'Authorization': 'Bearer $_token',

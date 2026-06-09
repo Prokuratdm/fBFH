@@ -128,4 +128,128 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get clubLogoUploadError =>
       'Логотип не загружен. Добавьте его при редактировании клуба.';
+
+  @override
+  String get usersTitle => 'Пользователи';
+
+  @override
+  String get usersCreateButton => 'Создать пользователя';
+
+  @override
+  String get userCreated => 'Пользователь создан';
+
+  @override
+  String get userDetailTitle => 'Информация о пользователе';
+
+  @override
+  String get userUsernameLabel => 'Логин';
+
+  @override
+  String get userPasswordLabel => 'Пароль';
+
+  @override
+  String get userEmailLabel => 'Email';
+
+  @override
+  String get userRolesLabel => 'Роли';
+
+  @override
+  String get userClubLabel => 'Клуб';
+
+  @override
+  String get userChangePassword => 'Сменить пароль';
+
+  @override
+  String get newPasswordLabel => 'Новый пароль';
+
+  @override
+  String get passwordChanged => 'Пароль изменён';
+
+  @override
+  String get roleAdmin => 'Админ';
+
+  @override
+  String get roleMethodist => 'Методист';
+
+  @override
+  String get roleCoach => 'Тренер';
+
+  @override
+  String get roleMainCoach => 'Старший тренер';
+
+  @override
+  String get roleClub => 'Клуб';
+
+  @override
+  String get roleClubMethodist => 'Методист клуба';
+
+  @override
+  String get filterRole => 'Роль';
+
+  @override
+  String get filterClub => 'Клуб';
+
+  @override
+  String get filterUsername => 'Логин';
+
+  @override
+  String get allRoles => 'Все роли';
+
+  @override
+  String get allClubs => 'Все клубы';
+
+  @override
+  String get noClub => 'Без клуба';
+
+  @override
+  String get locationsTitle => 'Локации';
+
+  @override
+  String get locationsCreateButton => 'Создать локацию';
+
+  @override
+  String get locationNameLabel => 'Название';
+
+  @override
+  String get locationCreateDialogTitle => 'Новая локация';
+
+  @override
+  String get locationCreate => 'Создать';
+
+  @override
+  String get locationCreated => 'Локация создана';
+
+  @override
+  String get locationsEmpty => 'Список локаций пуст';
+
+  @override
+  String get locationsNoClub =>
+      'У пользователя не привязан клуб. Локации недоступны.';
+
+  @override
+  String get inventoryTitle => 'Инвентарь';
+
+  @override
+  String get inventoryCreateButton => 'Создать инвентарь';
+
+  @override
+  String get inventoryNameLabel => 'Название';
+
+  @override
+  String get inventoryClubLabel => 'Клуб';
+
+  @override
+  String get inventoryCreateDialogTitle => 'Новый инвентарь';
+
+  @override
+  String get inventoryCreate => 'Создать';
+
+  @override
+  String get inventoryCreated => 'Инвентарь создан';
+
+  @override
+  String get inventoryEmpty => 'Список инвентаря пуст';
+
+  @override
+  String get inventoryNoClub => 'Нет доступных клубов для создания инвентаря.';
 }
