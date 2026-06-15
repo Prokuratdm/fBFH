@@ -252,4 +252,76 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get inventoryNoClub => 'Нет доступных клубов для создания инвентаря.';
+
+  @override
+  String get exercisesTitle => 'Упражнения';
+
+  @override
+  String get exercisesCreateButton => 'Создать упражнение';
+
+  @override
+  String get exercisesEmpty => 'Список упражнений пуст';
+
+  @override
+  String get exerciseNameLabel => 'Название';
+
+  @override
+  String get exerciseDescriptionLabel => 'Описание';
+
+  @override
+  String get exerciseTypeLabel => 'Тип';
+
+  @override
+  String get exerciseTypeAll => 'Все типы';
+
+  @override
+  String get exerciseTypeIce => 'Лёд';
+
+  @override
+  String get exerciseTypeLand => 'Земля';
+
+  @override
+  String get exerciseUrlLabel => 'Ссылка на видео (YouTube)';
+
+  @override
+  String get exerciseContentLabel => 'Содержание';
+
+  @override
+  String get exerciseInventoryLabel => 'Инвентарь';
+
+  @override
+  String get exerciseCreateDialogTitle => 'Новое упражнение';
+
+  @override
+  String get exerciseEditDialogTitle => 'Редактирование упражнения';
+
+  @override
+  String get exerciseCreate => 'Создать';
+
+  @override
+  String get exerciseSave => 'Сохранить';
+
+  @override
+  String get exerciseCreated => 'Упражнение создано';
+
+  @override
+  String get exerciseUpdated => 'Упражнение обновлено';
+
+  @override
+  String get exerciseEditButton => 'Редактировать';
+
+  @override
+  String get exerciseUploadPicture => 'Загрузить картинку';
+
+  @override
+  String get exerciseReplacePicture => 'Заменить картинку';
+
+  @override
+  String get exercisePictureEmpty => 'Картинка не загружена';
+
+  @override
+  String get exercisePictureUploaded => 'Картинка загружена';
+
+  @override
+  String get exerciseDetailSelect => 'Выберите упражнение из списка';
 }

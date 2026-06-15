@@ -5,6 +5,7 @@ import '../l10n/menu_items.dart';
 import '../models/user_info.dart';
 import '../services/auth_service_config.dart';
 import 'clubs_page.dart';
+import 'exercises_page.dart';
 import 'inventory_page.dart';
 import 'locations_page.dart';
 import 'users_page.dart';
@@ -27,6 +28,7 @@ class _HomePageState extends State<HomePage> {
   final _usersKey = GlobalKey<UsersPageState>();
   final _locationsKey = GlobalKey<LocationsPageState>();
   final _inventoryKey = GlobalKey<InventoryPageState>();
+  final _exercisesKey = GlobalKey<ExercisesPageState>();
 
   void _logout() {
     _authService.logout();
@@ -93,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                   _usersKey.currentState?.refresh();
                   _locationsKey.currentState?.refresh();
                   _inventoryKey.currentState?.refresh();
+                  _exercisesKey.currentState?.refresh();
                 },
               ),
             ),
@@ -118,6 +121,12 @@ class _HomePageState extends State<HomePage> {
                   if (item.label == l10n.menuInventory) {
                     return InventoryPage(
                       key: _inventoryKey,
+                      defaultClubId: widget.user.clubId,
+                    );
+                  }
+                  if (item.label == l10n.menuExercises) {
+                    return ExercisesPage(
+                      key: _exercisesKey,
                       defaultClubId: widget.user.clubId,
                     );
                   }

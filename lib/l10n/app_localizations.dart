@@ -577,6 +577,150 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Нет доступных клубов для создания инвентаря.'**
   String get inventoryNoClub;
+
+  /// No description provided for @exercisesTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Упражнения'**
+  String get exercisesTitle;
+
+  /// No description provided for @exercisesCreateButton.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать упражнение'**
+  String get exercisesCreateButton;
+
+  /// No description provided for @exercisesEmpty.
+  ///
+  /// In ru, this message translates to:
+  /// **'Список упражнений пуст'**
+  String get exercisesEmpty;
+
+  /// No description provided for @exerciseNameLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Название'**
+  String get exerciseNameLabel;
+
+  /// No description provided for @exerciseDescriptionLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Описание'**
+  String get exerciseDescriptionLabel;
+
+  /// No description provided for @exerciseTypeLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тип'**
+  String get exerciseTypeLabel;
+
+  /// No description provided for @exerciseTypeAll.
+  ///
+  /// In ru, this message translates to:
+  /// **'Все типы'**
+  String get exerciseTypeAll;
+
+  /// No description provided for @exerciseTypeIce.
+  ///
+  /// In ru, this message translates to:
+  /// **'Лёд'**
+  String get exerciseTypeIce;
+
+  /// No description provided for @exerciseTypeLand.
+  ///
+  /// In ru, this message translates to:
+  /// **'Земля'**
+  String get exerciseTypeLand;
+
+  /// No description provided for @exerciseUrlLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ссылка на видео (YouTube)'**
+  String get exerciseUrlLabel;
+
+  /// No description provided for @exerciseContentLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Содержание'**
+  String get exerciseContentLabel;
+
+  /// No description provided for @exerciseInventoryLabel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Инвентарь'**
+  String get exerciseInventoryLabel;
+
+  /// No description provided for @exerciseCreateDialogTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Новое упражнение'**
+  String get exerciseCreateDialogTitle;
+
+  /// No description provided for @exerciseEditDialogTitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Редактирование упражнения'**
+  String get exerciseEditDialogTitle;
+
+  /// No description provided for @exerciseCreate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Создать'**
+  String get exerciseCreate;
+
+  /// No description provided for @exerciseSave.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сохранить'**
+  String get exerciseSave;
+
+  /// No description provided for @exerciseCreated.
+  ///
+  /// In ru, this message translates to:
+  /// **'Упражнение создано'**
+  String get exerciseCreated;
+
+  /// No description provided for @exerciseUpdated.
+  ///
+  /// In ru, this message translates to:
+  /// **'Упражнение обновлено'**
+  String get exerciseUpdated;
+
+  /// No description provided for @exerciseEditButton.
+  ///
+  /// In ru, this message translates to:
+  /// **'Редактировать'**
+  String get exerciseEditButton;
+
+  /// No description provided for @exerciseUploadPicture.
+  ///
+  /// In ru, this message translates to:
+  /// **'Загрузить картинку'**
+  String get exerciseUploadPicture;
+
+  /// No description provided for @exerciseReplacePicture.
+  ///
+  /// In ru, this message translates to:
+  /// **'Заменить картинку'**
+  String get exerciseReplacePicture;
+
+  /// No description provided for @exercisePictureEmpty.
+  ///
+  /// In ru, this message translates to:
+  /// **'Картинка не загружена'**
+  String get exercisePictureEmpty;
+
+  /// No description provided for @exercisePictureUploaded.
+  ///
+  /// In ru, this message translates to:
+  /// **'Картинка загружена'**
+  String get exercisePictureUploaded;
+
+  /// No description provided for @exerciseDetailSelect.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выберите упражнение из списка'**
+  String get exerciseDetailSelect;
 }
 
 class _AppLocalizationsDelegate

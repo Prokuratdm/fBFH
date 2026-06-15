@@ -244,4 +244,53 @@ class StubLocalizations implements AppLocalizations {
   String get inventoryEmpty => 'inventoryEmpty';
   @override
   String get inventoryNoClub => 'inventoryNoClub';
+
+  @override
+  String get exercisesTitle => 'exercisesTitle';
+  @override
+  String get exercisesCreateButton => 'exercisesCreateButton';
+  @override
+  String get exercisesEmpty => 'exercisesEmpty';
+  @override
+  String get exerciseNameLabel => 'exerciseNameLabel';
+  @override
+  String get exerciseDescriptionLabel => 'exerciseDescriptionLabel';
+  @override
+  String get exerciseTypeLabel => 'exerciseTypeLabel';
+  @override
+  String get exerciseTypeAll => 'exerciseTypeAll';
+  @override
+  String get exerciseTypeIce => 'exerciseTypeIce';
+  @override
+  String get exerciseTypeLand => 'exerciseTypeLand';
+  @override
+  String get exerciseUrlLabel => 'exerciseUrlLabel';
+  @override
+  String get exerciseContentLabel => 'exerciseContentLabel';
+  @override
+  String get exerciseInventoryLabel => 'exerciseInventoryLabel';
+  @override
+  String get exerciseCreateDialogTitle => 'exerciseCreateDialogTitle';
+  @override
+  String get exerciseEditDialogTitle => 'exerciseEditDialogTitle';
+  @override
+  String get exerciseCreate => 'exerciseCreate';
+  @override
+  String get exerciseSave => 'exerciseSave';
+  @override
+  String get exerciseCreated => 'exerciseCreated';
+  @override
+  String get exerciseUpdated => 'exerciseUpdated';
+  @override
+  String get exerciseEditButton => 'exerciseEditButton';
+  @override
+  String get exerciseUploadPicture => 'exerciseUploadPicture';
+  @override
+  String get exerciseReplacePicture => 'exerciseReplacePicture';
+  @override
+  String get exercisePictureEmpty => 'exercisePictureEmpty';
+  @override
+  String get exercisePictureUploaded => 'exercisePictureUploaded';
+  @override
+  String get exerciseDetailSelect => 'exerciseDetailSelect';
 }

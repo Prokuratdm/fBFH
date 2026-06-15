@@ -252,4 +252,76 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get inventoryNoClub => 'No clubs available to create inventory.';
+
+  @override
+  String get exercisesTitle => 'Exercises';
+
+  @override
+  String get exercisesCreateButton => 'Create Exercise';
+
+  @override
+  String get exercisesEmpty => 'No exercises yet';
+
+  @override
+  String get exerciseNameLabel => 'Name';
+
+  @override
+  String get exerciseDescriptionLabel => 'Description';
+
+  @override
+  String get exerciseTypeLabel => 'Type';
+
+  @override
+  String get exerciseTypeAll => 'All types';
+
+  @override
+  String get exerciseTypeIce => 'Ice';
+
+  @override
+  String get exerciseTypeLand => 'Land';
+
+  @override
+  String get exerciseUrlLabel => 'Video URL (YouTube)';
+
+  @override
+  String get exerciseContentLabel => 'Content';
+
+  @override
+  String get exerciseInventoryLabel => 'Inventory';
+
+  @override
+  String get exerciseCreateDialogTitle => 'New Exercise';
+
+  @override
+  String get exerciseEditDialogTitle => 'Edit Exercise';
+
+  @override
+  String get exerciseCreate => 'Create';
+
+  @override
+  String get exerciseSave => 'Save';
+
+  @override
+  String get exerciseCreated => 'Exercise created';
+
+  @override
+  String get exerciseUpdated => 'Exercise updated';
+
+  @override
+  String get exerciseEditButton => 'Edit';
+
+  @override
+  String get exerciseUploadPicture => 'Upload Picture';
+
+  @override
+  String get exerciseReplacePicture => 'Replace Picture';
+
+  @override
+  String get exercisePictureEmpty => 'No picture uploaded';
+
+  @override
+  String get exercisePictureUploaded => 'Picture uploaded';
+
+  @override
+  String get exerciseDetailSelect => 'Select an exercise from the list';
 }
