@@ -110,5 +110,18 @@
   "exerciseReplacePicture": "Заменить картинку",
   "exercisePictureEmpty": "Картинка не загружена",
   "exercisePictureUploaded": "Картинка загружена",
-  "exerciseDetailSelect": "Выберите упражнение из списка"
+  "exerciseDetailSelect": "Выберите упражнение из списка",
+  "exerciseTrainingPart_BEGINNING": "Начало",
+  "exerciseTrainingPart_MIDDLE": "Середина",
+  "exerciseTrainingPart_END": "Конец",
+  "exerciseFocus_STRENGTH": "Сила",
+  "exerciseFocus_ENDURANCE": "Выносливость",
+  "exerciseFocus_COORDINATION": "Координация",
+  "exerciseFocus_SPEED": "Скорость",
+  "exerciseFocus_FLEXIBILITY": "Гибкость",
+  "exerciseFocus_TECHNICAL": "Техника",
+  "exercisePreparationType_TECHNICAL": "Техническая",
+  "exercisePreparationType_PHYSICAL": "Физическая",
+  "exercisePreparationType_PSYCHOLOGICAL": "Психологическая",
+  "exercisePreparationType_TACTICAL": "Тактическая"
 }

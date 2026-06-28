@@ -50,6 +50,15 @@ class AppConfig {
   /// Путь для картинки упражнения.
   static String exercisePicturePath(String id) => '/api/v1/exercises/$id/picture';
 
+  /// Путь для частей тренировки.
+  static const String trainingPartsPath = '/api/v1/exercises/training-parts';
+
+  /// Путь для направленностей (focuses).
+  static const String focusesPath = '/api/v1/exercises/focuses';
+
+  /// Путь для видов подготовки.
+  static const String preparationTypesPath = '/api/v1/exercises/preparation-types';
+
   /// Все возможные роли пользователей.
   static const List<String> allRoles = [
     'ROLE_ADMIN',

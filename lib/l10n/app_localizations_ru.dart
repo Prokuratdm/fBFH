@@ -324,4 +324,43 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get exerciseDetailSelect => 'Выберите упражнение из списка';
+
+  @override
+  String get exerciseTrainingPart_BEGINNING => 'Начало';
+
+  @override
+  String get exerciseTrainingPart_MIDDLE => 'Середина';
+
+  @override
+  String get exerciseTrainingPart_END => 'Конец';
+
+  @override
+  String get exerciseFocus_STRENGTH => 'Сила';
+
+  @override
+  String get exerciseFocus_ENDURANCE => 'Выносливость';
+
+  @override
+  String get exerciseFocus_COORDINATION => 'Координация';
+
+  @override
+  String get exerciseFocus_SPEED => 'Скорость';
+
+  @override
+  String get exerciseFocus_FLEXIBILITY => 'Гибкость';
+
+  @override
+  String get exerciseFocus_TECHNICAL => 'Техника';
+
+  @override
+  String get exercisePreparationType_TECHNICAL => 'Техническая';
+
+  @override
+  String get exercisePreparationType_PHYSICAL => 'Физическая';
+
+  @override
+  String get exercisePreparationType_PSYCHOLOGICAL => 'Психологическая';
+
+  @override
+  String get exercisePreparationType_TACTICAL => 'Тактическая';
 }

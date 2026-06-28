@@ -1,3 +1,47 @@
+import '../l10n/app_localizations.dart';
+
+/// Хелпер для перевода enum-значений упражнений.
+///
+/// Если перевода нет — возвращает значение как есть (fallback на английский).
+class ExerciseLabels {
+  ExerciseLabels._();
+
+  static String label(String enumValue, AppLocalizations l10n) {
+    switch (enumValue) {
+      case 'BEGINNING':
+        return l10n.exerciseTrainingPart_BEGINNING;
+      case 'MIDDLE':
+        return l10n.exerciseTrainingPart_MIDDLE;
+      case 'END':
+        return l10n.exerciseTrainingPart_END;
+      case 'STRENGTH':
+        return l10n.exerciseFocus_STRENGTH;
+      case 'ENDURANCE':
+        return l10n.exerciseFocus_ENDURANCE;
+      case 'COORDINATION':
+        return l10n.exerciseFocus_COORDINATION;
+      case 'SPEED':
+        return l10n.exerciseFocus_SPEED;
+      case 'FLEXIBILITY':
+        return l10n.exerciseFocus_FLEXIBILITY;
+      case 'TECHNICAL':
+        return l10n.exerciseFocus_TECHNICAL;
+      case 'PHYSICAL':
+        return l10n.exercisePreparationType_PHYSICAL;
+      case 'PSYCHOLOGICAL':
+        return l10n.exercisePreparationType_PSYCHOLOGICAL;
+      case 'TACTICAL':
+        return l10n.exercisePreparationType_TACTICAL;
+      case 'ICE':
+        return l10n.exerciseTypeIce;
+      case 'LAND':
+        return l10n.exerciseTypeLand;
+      default:
+        return enumValue;
+    }
+  }
+}
+
 /// Ответ API для упражнения.
 ///
 /// Возвращается эндпоинтами:
@@ -20,6 +64,9 @@ class ExerciseResponse {
   final List<String> inventoryIds;
   final String createdAt;
   final String? updatedAt;
+  final String? trainingPart;
+  final List<String> focuses;
+  final String? preparationType;
 
   const ExerciseResponse({
     required this.id,
@@ -35,6 +82,9 @@ class ExerciseResponse {
     required this.inventoryIds,
     required this.createdAt,
     this.updatedAt,
+    this.trainingPart,
+    required this.focuses,
+    this.preparationType,
   });
 
   factory ExerciseResponse.fromJson(Map<String, dynamic> json) {
@@ -55,6 +105,12 @@ class ExerciseResponse {
           [],
       createdAt: json['createdAt'] as String,
       updatedAt: json['updatedAt'] as String?,
+      trainingPart: json['trainingPart'] as String?,
+      focuses: (json['focuses'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          [],
+      preparationType: json['preparationType'] as String?,
     );
   }
 
@@ -73,6 +129,9 @@ class ExerciseResponse {
       'inventoryIds': inventoryIds,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
+      'trainingPart': trainingPart,
+      'focuses': focuses,
+      'preparationType': preparationType,
     };
   }
 }
@@ -88,6 +147,9 @@ class ExerciseRequest {
   final String? url;
   final String content;
   final List<String> inventoryIds;
+  final String? trainingPart;
+  final List<String> focuses;
+  final String? preparationType;
 
   const ExerciseRequest({
     required this.name,
@@ -96,6 +158,9 @@ class ExerciseRequest {
     this.url,
     required this.content,
     required this.inventoryIds,
+    this.trainingPart,
+    required this.focuses,
+    this.preparationType,
   });
 
   Map<String, dynamic> toJson() {
@@ -106,6 +171,9 @@ class ExerciseRequest {
       'url': url,
       'content': content,
       'inventoryIds': inventoryIds,
+      'trainingPart': trainingPart,
+      'focuses': focuses,
+      'preparationType': preparationType,
     };
   }
 
@@ -117,6 +185,9 @@ class ExerciseRequest {
     String? url,
     String? content,
     List<String>? inventoryIds,
+    String? trainingPart,
+    List<String>? focuses,
+    String? preparationType,
   }) {
     return ExerciseRequest(
       name: name ?? this.name,
@@ -125,6 +196,9 @@ class ExerciseRequest {
       url: url ?? this.url,
       content: content ?? this.content,
       inventoryIds: inventoryIds ?? this.inventoryIds,
+      trainingPart: trainingPart ?? this.trainingPart,
+      focuses: focuses ?? this.focuses,
+      preparationType: preparationType ?? this.preparationType,
     );
   }
 }

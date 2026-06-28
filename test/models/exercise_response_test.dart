@@ -110,6 +110,9 @@ void main() {
         inventoryIds: ['i1'],
         createdAt: '2026-01-01T00:00:00Z',
         updatedAt: '2026-01-02T00:00:00Z',
+        trainingPart: 'BEGINNING',
+        focuses: ['STRENGTH'],
+        preparationType: 'PHYSICAL',
       );
 
       final result = exercise.toJson();
@@ -119,6 +122,9 @@ void main() {
       expect(result['type'], 'LAND');
       expect(result['inventoryIds'], ['i1']);
       expect(result['clubId'], 'c1');
+      expect(result['trainingPart'], 'BEGINNING');
+      expect(result['focuses'], ['STRENGTH']);
+      expect(result['preparationType'], 'PHYSICAL');
     });
   });
 
@@ -131,6 +137,9 @@ void main() {
         url: 'https://youtube.com',
         content: 'Content',
         inventoryIds: ['inv-1', 'inv-2'],
+        trainingPart: 'MIDDLE',
+        focuses: ['STRENGTH', 'SPEED'],
+        preparationType: 'TECHNICAL',
       );
 
       final json = request.toJson();
@@ -141,6 +150,9 @@ void main() {
       expect(json['url'], 'https://youtube.com');
       expect(json['content'], 'Content');
       expect(json['inventoryIds'], ['inv-1', 'inv-2']);
+      expect(json['trainingPart'], 'MIDDLE');
+      expect(json['focuses'], ['STRENGTH', 'SPEED']);
+      expect(json['preparationType'], 'TECHNICAL');
     });
 
     test('toJson — url null', () {
@@ -150,6 +162,7 @@ void main() {
         type: 'LAND',
         content: '',
         inventoryIds: [],
+        focuses: [],
       );
 
       final json = request.toJson();
@@ -165,6 +178,7 @@ void main() {
         url: 'old-url',
         content: 'C',
         inventoryIds: ['x'],
+        focuses: [],
       );
 
       final updated = original.copyWith(name: 'New');
@@ -184,6 +198,7 @@ void main() {
         type: 'ICE',
         content: 'C',
         inventoryIds: ['x', 'y'],
+        focuses: ['x', 'y'],
       );
 
       final updated = original.copyWith(inventoryIds: []);

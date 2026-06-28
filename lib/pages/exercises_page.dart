@@ -101,11 +101,17 @@ class ExercisesPageState extends State<ExercisesPage> {
     String selectedType = 'ICE';
     String? selectedClubId = widget.defaultClubId;
     final selectedInventoryIds = <String>{};
+    String? selectedTrainingPart;
+    final selectedFocuses = <String>{};
+    String? selectedPreparationType;
     PlatformFile? pictureFile;
     Uint8List? pictureBytes;
 
     // Подгружаем справочники каждый раз заново
     List<String> types = [];
+    List<String> trainingParts = [];
+    List<String> focuses = [];
+    List<String> preparationTypes = [];
     List<Map<String, String>> clubs = [];
     List<Map<String, String>> inventory = [];
 
@@ -114,9 +120,10 @@ class ExercisesPageState extends State<ExercisesPage> {
 
     try {
       types = await _exerciseService.getTypes();
-      if (types.isNotEmpty) {
-        selectedType = types.first;
-      }
+      trainingParts = await _exerciseService.getTrainingParts();
+      focuses = await _exerciseService.getFocuses();
+      preparationTypes = await _exerciseService.getPreparationTypes();
+      if (types.isNotEmpty) selectedType = types.first;
 
       if (widget.defaultClubId == null) {
         final clubPage = await _clubService.getClubs(size: 100);
@@ -195,7 +202,7 @@ class ExercisesPageState extends State<ExercisesPage> {
                       items: types.map((t) {
                         return DropdownMenuItem(
                           value: t,
-                          child: Text(t),
+                          child: Text(ExerciseLabels.label(t, l10n)),
                         );
                       }).toList(),
                       onChanged: (v) {
@@ -277,6 +284,82 @@ class ExercisesPageState extends State<ExercisesPage> {
                       ),
                     ),
                     const SizedBox(height: 12),
+                    // trainingPart
+                    DropdownButtonFormField<String>(
+                      value: selectedTrainingPart,
+                      decoration: InputDecoration(
+                        labelText: 'Training Part',
+                        border: const OutlineInputBorder(),
+                      ),
+                      items: [
+                        const DropdownMenuItem<String>(
+                          value: null,
+                          child: Text('—'),
+                        ),
+                        ...trainingParts.map((t) {
+                          return DropdownMenuItem(
+                            value: t,
+                            child: Text(ExerciseLabels.label(t, l10n)),
+                          );
+                        }),
+                      ],
+                      onChanged: (v) {
+                        setDialogState(() => selectedTrainingPart = v);
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    // focuses
+                    InputDecorator(
+                      decoration: InputDecoration(
+                        labelText: 'Focuses',
+                        border: const OutlineInputBorder(),
+                      ),
+                      child: Wrap(
+                        spacing: 8,
+                        runSpacing: 4,
+                        children: focuses.map((f) {
+                          final selected = selectedFocuses.contains(f);
+                          return FilterChip(
+                            label: Text(ExerciseLabels.label(f, l10n)),
+                            selected: selected,
+                            onSelected: (v) {
+                              setDialogState(() {
+                                if (v) {
+                                  selectedFocuses.add(f);
+                                } else {
+                                  selectedFocuses.remove(f);
+                                }
+                              });
+                            },
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    // preparationType
+                    DropdownButtonFormField<String>(
+                      value: selectedPreparationType,
+                      decoration: InputDecoration(
+                        labelText: 'Preparation Type',
+                        border: const OutlineInputBorder(),
+                      ),
+                      items: [
+                        const DropdownMenuItem<String>(
+                          value: null,
+                          child: Text('—'),
+                        ),
+                        ...preparationTypes.map((t) {
+                          return DropdownMenuItem(
+                            value: t,
+                            child: Text(ExerciseLabels.label(t, l10n)),
+                          );
+                        }),
+                      ],
+                      onChanged: (v) {
+                        setDialogState(() => selectedPreparationType = v);
+                      },
+                    ),
+                    const SizedBox(height: 12),
                     Row(
                       children: [
                         Expanded(
@@ -350,6 +433,9 @@ class ExercisesPageState extends State<ExercisesPage> {
                                 : urlCtrl.text.trim(),
                             content: contentCtrl.text.trim(),
                             inventoryIds: selectedInventoryIds.toList(),
+                            trainingPart: selectedTrainingPart,
+                            focuses: selectedFocuses.toList(),
+                            preparationType: selectedPreparationType,
                           );
 
                           final exercise = await _exerciseService.create(
@@ -412,16 +498,26 @@ class ExercisesPageState extends State<ExercisesPage> {
     final contentCtrl = TextEditingController(text: exercise.content);
     String selectedType = exercise.type;
     final selectedInventoryIds = exercise.inventoryIds.toSet();
+    String? selectedTrainingPart = exercise.trainingPart;
+    final selectedFocuses = exercise.focuses.toSet();
+    String? selectedPreparationType = exercise.preparationType;
     PlatformFile? pictureFile;
     Uint8List? pictureBytes;
 
     List<String> types = [];
+    List<String> trainingParts = [];
+    List<String> focuses = [];
+    List<String> preparationTypes = [];
     List<Map<String, String>> inventory = [];
     bool isLoadingDicts = true;
     String? dictError;
 
     try {
       types = await _exerciseService.getTypes();
+      trainingParts = await _exerciseService.getTrainingParts();
+      focuses = await _exerciseService.getFocuses();
+      preparationTypes = await _exerciseService.getPreparationTypes();
+
       final invPage = await _inventoryService.getInventory(size: 100);
       inventory = invPage.content
           .map((i) => {
@@ -492,7 +588,7 @@ class ExercisesPageState extends State<ExercisesPage> {
                       items: types.map((t) {
                         return DropdownMenuItem(
                           value: t,
-                          child: Text(t),
+                          child: Text(ExerciseLabels.label(t, l10n)),
                         );
                       }).toList(),
                       onChanged: (v) {
@@ -520,6 +616,7 @@ class ExercisesPageState extends State<ExercisesPage> {
                       ),
                     ),
                     const SizedBox(height: 12),
+                    // редактирование
                     InputDecorator(
                       decoration: InputDecoration(
                         labelText: l10n.exerciseInventoryLabel,
@@ -546,6 +643,79 @@ class ExercisesPageState extends State<ExercisesPage> {
                           );
                         }).toList(),
                       ),
+                    ),
+                    const SizedBox(height: 12),
+                    DropdownButtonFormField<String>(
+                      value: selectedTrainingPart,
+                      decoration: InputDecoration(
+                        labelText: 'Training Part',
+                        border: const OutlineInputBorder(),
+                      ),
+                      items: [
+                        const DropdownMenuItem<String>(
+                          value: null,
+                          child: Text('—'),
+                        ),
+                        ...trainingParts.map((t) {
+                          return DropdownMenuItem(
+                            value: t,
+                            child: Text(ExerciseLabels.label(t, l10n)),
+                          );
+                        }),
+                      ],
+                      onChanged: (v) {
+                        setDialogState(() => selectedTrainingPart = v);
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    InputDecorator(
+                      decoration: InputDecoration(
+                        labelText: 'Focuses',
+                        border: const OutlineInputBorder(),
+                      ),
+                      child: Wrap(
+                        spacing: 8,
+                        runSpacing: 4,
+                        children: focuses.map((f) {
+                          final selected = selectedFocuses.contains(f);
+                          return FilterChip(
+                            label: Text(ExerciseLabels.label(f, l10n)),
+                            selected: selected,
+                            onSelected: (v) {
+                              setDialogState(() {
+                                if (v) {
+                                  selectedFocuses.add(f);
+                                } else {
+                                  selectedFocuses.remove(f);
+                                }
+                              });
+                            },
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    DropdownButtonFormField<String>(
+                      value: selectedPreparationType,
+                      decoration: InputDecoration(
+                        labelText: 'Preparation Type',
+                        border: const OutlineInputBorder(),
+                      ),
+                      items: [
+                        const DropdownMenuItem<String>(
+                          value: null,
+                          child: Text('—'),
+                        ),
+                        ...preparationTypes.map((t) {
+                          return DropdownMenuItem(
+                            value: t,
+                            child: Text(ExerciseLabels.label(t, l10n)),
+                          );
+                        }),
+                      ],
+                      onChanged: (v) {
+                        setDialogState(() => selectedPreparationType = v);
+                      },
                     ),
                     const SizedBox(height: 12),
                     Row(
@@ -621,6 +791,9 @@ class ExercisesPageState extends State<ExercisesPage> {
                                 : urlCtrl.text.trim(),
                             content: contentCtrl.text.trim(),
                             inventoryIds: selectedInventoryIds.toList(),
+                            trainingPart: selectedTrainingPart,
+                            focuses: selectedFocuses.toList(),
+                            preparationType: selectedPreparationType,
                           );
 
                           final updated = await _exerciseService.update(
@@ -687,16 +860,13 @@ class ExercisesPageState extends State<ExercisesPage> {
 
   Future<void> _selectExercise(ExerciseResponse exercise) async {
     try {
-      // Загружаем детали упражнения и список инвентаря параллельно
-      final results = await Future.wait([
-        _exerciseService.getById(exercise.id),
-        _loadInventoryMap(),
-      ]);
+      final detail = await _exerciseService.getById(exercise.id);
       if (!mounted) return;
-      final detail = results[0] as ExerciseResponse;
       setState(() {
         _selectedExercise = detail;
       });
+      // Подгружаем инвентарь в фоне
+      _loadInventoryMap();
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -735,8 +905,8 @@ class ExercisesPageState extends State<ExercisesPage> {
                     value: null,
                     child: Text(l10n.exerciseTypeAll),
                   ),
-                  const DropdownMenuItem(value: 'ICE', child: Text('ICE')),
-                  const DropdownMenuItem(value: 'LAND', child: Text('LAND')),
+                  DropdownMenuItem(value: 'ICE', child: Text(ExerciseLabels.label('ICE', l10n))),
+                  DropdownMenuItem(value: 'LAND', child: Text(ExerciseLabels.label('LAND', l10n))),
                 ],
                 onChanged: (v) {
                   setState(() {
@@ -881,7 +1051,7 @@ class ExercisesPageState extends State<ExercisesPage> {
             ],
           ),
           const SizedBox(height: 8),
-          Chip(label: Text(exercise.type)),
+          Chip(label: Text(ExerciseLabels.label(exercise.type, l10n))),
           const SizedBox(height: 12),
           if (pictureUrl != null)
             Padding(
@@ -936,6 +1106,27 @@ class ExercisesPageState extends State<ExercisesPage> {
             ),
             const SizedBox(height: 4),
             Text(exercise.content),
+            const SizedBox(height: 12),
+          ],
+          if (exercise.trainingPart != null && exercise.trainingPart!.isNotEmpty) ...[
+            const Text('Training Part', style: TextStyle(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 4),
+            Chip(label: Text(ExerciseLabels.label(exercise.trainingPart!, l10n))),
+            const SizedBox(height: 12),
+          ],
+          if (exercise.focuses.isNotEmpty) ...[
+            const Text('Focuses', style: TextStyle(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 4),
+            Wrap(
+              spacing: 8,
+              children: exercise.focuses.map((f) => Chip(label: Text(ExerciseLabels.label(f, l10n)))).toList(),
+            ),
+            const SizedBox(height: 12),
+          ],
+          if (exercise.preparationType != null && exercise.preparationType!.isNotEmpty) ...[
+            const Text('Preparation Type', style: TextStyle(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 4),
+            Chip(label: Text(ExerciseLabels.label(exercise.preparationType!, l10n))),
             const SizedBox(height: 12),
           ],
           if (exercise.clubName != null && exercise.clubName!.isNotEmpty) ...[

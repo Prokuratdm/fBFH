@@ -721,6 +721,84 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Выберите упражнение из списка'**
   String get exerciseDetailSelect;
+
+  /// No description provided for @exerciseTrainingPart_BEGINNING.
+  ///
+  /// In ru, this message translates to:
+  /// **'Начало'**
+  String get exerciseTrainingPart_BEGINNING;
+
+  /// No description provided for @exerciseTrainingPart_MIDDLE.
+  ///
+  /// In ru, this message translates to:
+  /// **'Середина'**
+  String get exerciseTrainingPart_MIDDLE;
+
+  /// No description provided for @exerciseTrainingPart_END.
+  ///
+  /// In ru, this message translates to:
+  /// **'Конец'**
+  String get exerciseTrainingPart_END;
+
+  /// No description provided for @exerciseFocus_STRENGTH.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сила'**
+  String get exerciseFocus_STRENGTH;
+
+  /// No description provided for @exerciseFocus_ENDURANCE.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выносливость'**
+  String get exerciseFocus_ENDURANCE;
+
+  /// No description provided for @exerciseFocus_COORDINATION.
+  ///
+  /// In ru, this message translates to:
+  /// **'Координация'**
+  String get exerciseFocus_COORDINATION;
+
+  /// No description provided for @exerciseFocus_SPEED.
+  ///
+  /// In ru, this message translates to:
+  /// **'Скорость'**
+  String get exerciseFocus_SPEED;
+
+  /// No description provided for @exerciseFocus_FLEXIBILITY.
+  ///
+  /// In ru, this message translates to:
+  /// **'Гибкость'**
+  String get exerciseFocus_FLEXIBILITY;
+
+  /// No description provided for @exerciseFocus_TECHNICAL.
+  ///
+  /// In ru, this message translates to:
+  /// **'Техника'**
+  String get exerciseFocus_TECHNICAL;
+
+  /// No description provided for @exercisePreparationType_TECHNICAL.
+  ///
+  /// In ru, this message translates to:
+  /// **'Техническая'**
+  String get exercisePreparationType_TECHNICAL;
+
+  /// No description provided for @exercisePreparationType_PHYSICAL.
+  ///
+  /// In ru, this message translates to:
+  /// **'Физическая'**
+  String get exercisePreparationType_PHYSICAL;
+
+  /// No description provided for @exercisePreparationType_PSYCHOLOGICAL.
+  ///
+  /// In ru, this message translates to:
+  /// **'Психологическая'**
+  String get exercisePreparationType_PSYCHOLOGICAL;
+
+  /// No description provided for @exercisePreparationType_TACTICAL.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тактическая'**
+  String get exercisePreparationType_TACTICAL;
 }
 
 class _AppLocalizationsDelegate

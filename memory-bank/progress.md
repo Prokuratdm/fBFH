@@ -63,6 +63,9 @@
 | Обновление картинки | POST /api/v1/exercises/{id}/picture | ✅ |
 | Дропдаун клубов (для админа/методиста) | — | ✅ |
 | Дропдаун инвентаря (FilterChip'ы) | — | ✅ |
+| Поля trainingPart, focuses, preparationType | — | ✅ |
+| Русский перевод enum-значений (ExerciseLabels) | — | ✅ |
+| Дропдауны trainingPart/preparationType + FilterChip focuses | — | ✅ |
 | 69 unit/widget-тестов | — | ✅ |
 
 ## Роли и меню

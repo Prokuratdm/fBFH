@@ -293,4 +293,30 @@ class StubLocalizations implements AppLocalizations {
   String get exercisePictureUploaded => 'exercisePictureUploaded';
   @override
   String get exerciseDetailSelect => 'exerciseDetailSelect';
+  @override
+  String get exerciseTrainingPart_BEGINNING => 'exerciseTrainingPart_BEGINNING';
+  @override
+  String get exerciseTrainingPart_MIDDLE => 'exerciseTrainingPart_MIDDLE';
+  @override
+  String get exerciseTrainingPart_END => 'exerciseTrainingPart_END';
+  @override
+  String get exerciseFocus_STRENGTH => 'exerciseFocus_STRENGTH';
+  @override
+  String get exerciseFocus_ENDURANCE => 'exerciseFocus_ENDURANCE';
+  @override
+  String get exerciseFocus_COORDINATION => 'exerciseFocus_COORDINATION';
+  @override
+  String get exerciseFocus_SPEED => 'exerciseFocus_SPEED';
+  @override
+  String get exerciseFocus_FLEXIBILITY => 'exerciseFocus_FLEXIBILITY';
+  @override
+  String get exerciseFocus_TECHNICAL => 'exerciseFocus_TECHNICAL';
+  @override
+  String get exercisePreparationType_TECHNICAL => 'exercisePreparationType_TECHNICAL';
+  @override
+  String get exercisePreparationType_PHYSICAL => 'exercisePreparationType_PHYSICAL';
+  @override
+  String get exercisePreparationType_PSYCHOLOGICAL => 'exercisePreparationType_PSYCHOLOGICAL';
+  @override
+  String get exercisePreparationType_TACTICAL => 'exercisePreparationType_TACTICAL';
 }

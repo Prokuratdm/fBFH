@@ -324,4 +324,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get exerciseDetailSelect => 'Select an exercise from the list';
+
+  @override
+  String get exerciseTrainingPart_BEGINNING => 'Beginning';
+
+  @override
+  String get exerciseTrainingPart_MIDDLE => 'Middle';
+
+  @override
+  String get exerciseTrainingPart_END => 'End';
+
+  @override
+  String get exerciseFocus_STRENGTH => 'Strength';
+
+  @override
+  String get exerciseFocus_ENDURANCE => 'Endurance';
+
+  @override
+  String get exerciseFocus_COORDINATION => 'Coordination';
+
+  @override
+  String get exerciseFocus_SPEED => 'Speed';
+
+  @override
+  String get exerciseFocus_FLEXIBILITY => 'Flexibility';
+
+  @override
+  String get exerciseFocus_TECHNICAL => 'Technical';
+
+  @override
+  String get exercisePreparationType_TECHNICAL => 'Technical';
+
+  @override
+  String get exercisePreparationType_PHYSICAL => 'Physical';
+
+  @override
+  String get exercisePreparationType_PSYCHOLOGICAL => 'Psychological';
+
+  @override
+  String get exercisePreparationType_TACTICAL => 'Tactical';
 }

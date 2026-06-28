@@ -110,5 +110,18 @@
   "exerciseReplacePicture": "Replace Picture",
   "exercisePictureEmpty": "No picture uploaded",
   "exercisePictureUploaded": "Picture uploaded",
-  "exerciseDetailSelect": "Select an exercise from the list"
+  "exerciseDetailSelect": "Select an exercise from the list",
+  "exerciseTrainingPart_BEGINNING": "Beginning",
+  "exerciseTrainingPart_MIDDLE": "Middle",
+  "exerciseTrainingPart_END": "End",
+  "exerciseFocus_STRENGTH": "Strength",
+  "exerciseFocus_ENDURANCE": "Endurance",
+  "exerciseFocus_COORDINATION": "Coordination",
+  "exerciseFocus_SPEED": "Speed",
+  "exerciseFocus_FLEXIBILITY": "Flexibility",
+  "exerciseFocus_TECHNICAL": "Technical",
+  "exercisePreparationType_TECHNICAL": "Technical",
+  "exercisePreparationType_PHYSICAL": "Physical",
+  "exercisePreparationType_PSYCHOLOGICAL": "Psychological",
+  "exercisePreparationType_TACTICAL": "Tactical"
 }

@@ -39,15 +39,61 @@ class ExerciseService {
     }
   }
 
+  /// Возвращает список частей тренировки (BEGINNING, MIDDLE, END).
+  Future<List<String>> getTrainingParts() async {
+    final response = await http.get(
+      Uri.parse('${AppConfig.baseUrl}${AppConfig.trainingPartsPath}'),
+      headers: _headers,
+    );
+    if (response.statusCode == 200) {
+      final body = jsonDecode(response.body) as List<dynamic>;
+      return body.map((e) => e as String).toList();
+    } else {
+      throw ExerciseException(_extractMessage(response));
+    }
+  }
+
+  /// Возвращает список направленностей (STRENGTH, ENDURANCE, ...).
+  Future<List<String>> getFocuses() async {
+    final response = await http.get(
+      Uri.parse('${AppConfig.baseUrl}${AppConfig.focusesPath}'),
+      headers: _headers,
+    );
+    if (response.statusCode == 200) {
+      final body = jsonDecode(response.body) as List<dynamic>;
+      return body.map((e) => e as String).toList();
+    } else {
+      throw ExerciseException(_extractMessage(response));
+    }
+  }
+
+  /// Возвращает список видов подготовки (TECHNICAL, PHYSICAL, ...).
+  Future<List<String>> getPreparationTypes() async {
+    final response = await http.get(
+      Uri.parse('${AppConfig.baseUrl}${AppConfig.preparationTypesPath}'),
+      headers: _headers,
+    );
+    if (response.statusCode == 200) {
+      final body = jsonDecode(response.body) as List<dynamic>;
+      return body.map((e) => e as String).toList();
+    } else {
+      throw ExerciseException(_extractMessage(response));
+    }
+  }
+
   /// Возвращает пагинированный список упражнений.
   ///
   /// [active] — фильтр по активности (по умолчанию `true`).
   /// [type] — фильтр по типу (например `"ICE"`, `"LAND"` или `null` для всех).
+  /// [trainingPart], [focus], [preparationType] — опциональные фильтры.
   Future<PageResponse<ExerciseResponse>> getAll({
     bool active = true,
     String? type,
     int page = 0,
     int size = 100,
+    String? trainingPart,
+    String? focus,
+    String? preparationType,
   }) async {
     final queryParams = <String, String>{
       'active': active.toString(),
@@ -56,6 +102,15 @@ class ExerciseService {
     };
     if (type != null) {
       queryParams['type'] = type;
+    }
+    if (trainingPart != null) {
+      queryParams['trainingPart'] = trainingPart;
+    }
+    if (focus != null) {
+      queryParams['focus'] = focus;
+    }
+    if (preparationType != null) {
+      queryParams['preparationType'] = preparationType;
     }
 
     final uri = Uri.parse(
